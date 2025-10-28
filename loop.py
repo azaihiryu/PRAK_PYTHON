@@ -1,6 +1,7 @@
-a=0
-n = 1
-while n <= 15:
-    a = a+(1/n)
-    print(a,n)
+b = int(input('Masukkan Bilangan : '))
+n = 0
+a = 0
+while n < b:
     n = n+1
+    a = a+1/n
+print(a)
