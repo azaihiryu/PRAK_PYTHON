@@ -16,19 +16,19 @@ while not escaped:
         if not arr:
             print('List kosong.')
         else:
+            print('Menampilkan isi list' for e in arr)
             print('Isi list saat ini: ')
             for e in arr:
                 print(e)
         
     elif choice == '2':
         print('Menambah data...')
-        try:
-            # Konversi input menjadi integer, sesuai dengan data awal di list
-            data_to_add = int(input('Masukkan data integer yang ingin ditambahkan: '))
-            arr.append(data_to_add)
-            print(f'Data {data_to_add} berhasil ditambahkan. List baru: {arr}')
-        except ValueError:
-            print('Input tidak valid. Harap masukkan bilangan bulat (integer).')
+        # Konversi input menjadi integer, sesuai dengan data awal di list
+        data_to_add = input('Masukkan data integer yang ingin ditambahkan: ')
+        arr.append(data_to_add)
+        print(f'Data {data_to_add} berhasil ditambahkan. List baru: {arr}')
+
+
             
     elif choice == '3':
         print('Menghapus data berdasarkan indeks...')
