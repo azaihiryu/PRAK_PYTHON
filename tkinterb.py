@@ -45,13 +45,19 @@ def modulus():
     result = a % b
     res.config(text=str(result))
     
+def chc():
+    selection = vars.get()
+    res.config(text=str(selection))
 #BUTTON
+chc = IntVar()
+chc.set(1) # default choice 
 
-Radiobutton(window, text="+", command=add, width=5, value=1).grid(column=0, row=4)
-Radiobutton(window, text="-", command=subtract, width=5, value=2).grid(column=1, row=4)
-Radiobutton(window, text="*", command=multiply, width=5, value=3).grid(column=0, row=5)
-Radiobutton(window, text="/", command=divide, width=5, value=4).grid(column=1, row=5)
-Radiobutton(window, text="%", command=modulus, width=5, value=5).grid(column=0, row=6)
+Radiobutton(window, text="Add", variable=chc, value=1, command=chc).grid(column=0, row=4)
+Radiobutton(window, text="Subtract", variable=chc, value=2, command=chc).grid(column=1, row=4)
+Radiobutton(window, text="Multiply", variable=chc, value=3, command=chc).grid(column=0, row=5)
+Radiobutton(window, text="Divide", variable=chc, value=4, command=chc).grid(column=1, row=5)
+Radiobutton(window, text="Modulus", variable=chc, value=5, command=chc).grid(column=0, row=6)
+Button(window, text="Calculate", command=lambda: [add() if chc.get() == 1 else subtract() if chc.get() == 2 else multiply() if chc.get() == 3 else divide() if chc.get() == 4 else modulus()], width=10).grid(column=1, row=7)
 Button(window, text="Exit", command=window.quit, width=5).grid(column=1, row=6)
 
 window.mainloop()
